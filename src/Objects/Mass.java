@@ -1,10 +1,11 @@
 package Objects;
 
+import Interfaces.Collidable;
 import Interfaces.Drawable;
 
 import java.awt.*;
 
-public abstract class Mass implements Drawable {
+public abstract class Mass implements Drawable, Collidable<CircleMass> {
 
     public double mass;
     public Vector position;
