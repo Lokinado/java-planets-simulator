@@ -2,10 +2,9 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.List;
 
-import Objects.CircleMass;
+import Interfaces.Drawable;
 import Objects.Mass;
-import Objects.Vector;
-import Tools.*;
+
 public class MainPanel extends JPanel {
     private List<Mass> Objects;
 
@@ -27,10 +26,10 @@ public class MainPanel extends JPanel {
         g.setStroke(k);
 
         for( Mass object : Objects){
-            object.Draw(g);
+            if( object instanceof Drawable){
+                ((Drawable)object).Draw(g);
+            }
         }
-
-        //System.out.println("RERENDER!!!");
 
     }
 }

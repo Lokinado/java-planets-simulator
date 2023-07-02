@@ -5,7 +5,7 @@ import Interfaces.Drawable;
 
 import java.awt.*;
 
-public abstract class Mass implements Drawable, Collidable<CircleMass> {
+public abstract class Mass {
 
     public double mass;
     public Vector position;

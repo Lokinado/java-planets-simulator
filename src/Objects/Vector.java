@@ -39,4 +39,9 @@ public class Vector{
     public double Product( Vector rhs ){
         return this.x*rhs.x + this.y*rhs.y;
     }
+
+    public void Set(Vector rhs){
+        this.x = rhs.x;
+        this.y = rhs.y;
+    }
 }
