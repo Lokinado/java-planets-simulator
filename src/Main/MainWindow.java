@@ -1,4 +1,7 @@
+package Main;
+
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +14,8 @@ import Tools.*;
 public class MainWindow extends JFrame {
     private MainPanel mainPanel;
     private List<Mass> Objects;
+
+    public boolean isWindowAlive;
 
     private void updateObjects(){
         //System.out.println("I UPDATE");
@@ -61,7 +66,7 @@ public class MainWindow extends JFrame {
     public class MainLoop implements Runnable {
         @Override
         public void run() {
-            while (true) {
+            while (isWindowAlive) {
 
                 updateObjects();
 
@@ -73,17 +78,19 @@ public class MainWindow extends JFrame {
                     return;
                 }
             }
+            System.exit(1);
         }
     }
     MainWindow(){
         super("Java Planets Simulator");
 
+        this.isWindowAlive = true;
         this.Objects = new ArrayList<>();
 
         System.out.println((Constants.FrameTime.value / 1000.0) );
 
-        Objects.add( new CircleMass(new Vector(300, 300), 1e14, 50) );
-        Objects.add( new CircleMass(new Vector(600, 300), new Vector(0,0), 1e14, 10) );
+        Objects.add( new CircleMass(new Vector(300, 300), 1e15, 50) );
+        Objects.add( new CircleMass(new Vector(600, 300), new Vector(0,9), 1e4, 10) );
 
         this.mainPanel = new MainPanel(Objects);
 

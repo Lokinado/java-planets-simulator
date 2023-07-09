@@ -3,6 +3,7 @@ package Objects;
 import Interfaces.Collidable;
 import Interfaces.Drawable;
 import Tools.DrawCircle;
+import Tools.Globals;
 
 import java.awt.*;
 
@@ -25,6 +26,14 @@ public class CircleMass extends Mass implements Drawable, Collidable {
 
     public void Draw(Graphics2D g) {
         DrawCircle.DrawFromCenter(g, (int)this.position.x, (int)this.position.y, (int)(this.radius * 2));
+
+        if(Globals.isVelocityVectorVisible){
+            this.velocity.Draw(g, this.position, Color.GREEN);
+        }
+
+        if(Globals.isAccelerationVectorVisible){
+            this.acceleration.Draw(g, this.position, Color.RED);
+        }
     }
 
     public boolean IsColliding(Mass target) {

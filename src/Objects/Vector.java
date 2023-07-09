@@ -1,4 +1,7 @@
 package Objects;
+import Tools.Globals;
+
+import java.awt.*;
 import java.lang.Math;
 import java.security.PublicKey;
 
@@ -43,5 +46,15 @@ public class Vector{
     public void Set(Vector rhs){
         this.x = rhs.x;
         this.y = rhs.y;
+    }
+
+    public void Draw(Graphics2D g,Vector position, Color c){
+        g.setColor(c);
+        Vector endPoint = new Vector(this.x,this.y);
+        endPoint.Normalize();
+        endPoint.Multiply(Globals.vectorDrawScale);
+        endPoint.Add(position);
+        g.drawLine((int)position.x,(int)position.y,(int)endPoint.x,(int)endPoint.y);
+        g.setColor(Color.BLACK);
     }
 }

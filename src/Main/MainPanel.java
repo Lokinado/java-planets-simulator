@@ -1,14 +1,22 @@
+package Main;
+
 import java.awt.*;
 import javax.swing.*;
 import java.util.List;
 
 import Interfaces.Drawable;
 import Objects.Mass;
+import UI.UserInterfaceController;
 
 public class MainPanel extends JPanel {
     private List<Mass> Objects;
 
+    private UserInterfaceController UI;
+
     public MainPanel(List<Mass> Objects){
+        this.setLayout(new BorderLayout());
+
+        this.UI = new UserInterfaceController(this);
         this.Objects = Objects;
     }
 
