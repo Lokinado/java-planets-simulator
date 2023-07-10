@@ -11,13 +11,15 @@ import UI.UserInterfaceController;
 public class MainPanel extends JPanel {
     private List<Mass> Objects;
 
-    private UserInterfaceController UI;
+    private UserInterfaceController UIController;
 
-    public MainPanel(List<Mass> Objects){
+    public MainPanel(List<Mass> Objects, UserInterfaceController UI){
         this.setLayout(new BorderLayout());
 
-        this.UI = new UserInterfaceController(this);
         this.Objects = Objects;
+
+        this.UIController = UI;
+        this.UIController.SetParentPanel(this);
     }
 
     @Override

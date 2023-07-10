@@ -50,9 +50,7 @@ public class Vector{
 
     public void Draw(Graphics2D g,Vector position, Color c){
         g.setColor(c);
-        Vector endPoint = new Vector(this.x,this.y);
-        endPoint.Normalize();
-        endPoint.Multiply(Globals.vectorDrawScale);
+        Vector endPoint = new Vector(this.x, this.y);
         endPoint.Add(position);
         g.drawLine((int)position.x,(int)position.y,(int)endPoint.x,(int)endPoint.y);
         g.setColor(Color.BLACK);
