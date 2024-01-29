@@ -69,12 +69,12 @@ there are no releases for java-planets-simulator currently. The easyiest way to 
 ```sh
 git clone https://github.com/Lokinado/java-planets-simulator
 ```
-2. Open project in your Java IDE.
+2. Open project in your Java IDE. <br>
 ![Intellij IDEA](https://raw.githubusercontent.com/Lokinado/java-planets-simulator/main/images/1.png "Open project")
 
 3. Install all nessecery JDKs. Your IDE should resolve it by itself.
 
-4. Run App
+4. Run App <br>
 ![Intellij IDEA](https://raw.githubusercontent.com/Lokinado/java-planets-simulator/main/images/2.png "Run App")
 
 <br>
