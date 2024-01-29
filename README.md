@@ -3,7 +3,7 @@
 author = "Krzysztof Borowski"
 title = "java-planets-simulator"
 date = "2023-12-08"
-description = Java app to visualize n-body movement in changing gravitational field."
+description = "Java app to visualize n-body movement in changing gravitational field."
 summary = "Java app to visualize n-body movement in changing gravitational field."
 draft="false"
 tags = [
